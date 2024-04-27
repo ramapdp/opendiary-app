@@ -5,7 +5,8 @@ import React from "react";
 const page = (): React.ReactElement => {
   return (
     <Wrapper>
-      <AddDiaryForm />
+      {/* <AddDiaryForm /> */}
+      <h1>Ini Halaman Dashboard</h1>
     </Wrapper>
   );
 };

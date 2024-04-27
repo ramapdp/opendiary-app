@@ -1,8 +1,16 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import NavbarButton from "./NavbarButton";
+import { usePathname } from "next/navigation";
 
 const Navbar = (): React.ReactElement => {
+  const pathname = usePathname();
+
+  if (pathname === "/sign-in") {
+    return <></>;
+  }
+
   return (
     <div className="navbar bg-base-100">
       <div className="container flex mx-auto">
@@ -11,7 +19,7 @@ const Navbar = (): React.ReactElement => {
             OpenDiary
           </Link>
         </div>
-         <NavbarButton />
+        <NavbarButton />
       </div>
     </div>
   );

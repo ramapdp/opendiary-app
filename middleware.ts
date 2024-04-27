@@ -6,7 +6,7 @@ export default clerkMiddleware(
   (auth, req) => {
     if (isProtectedRoute(req)) auth().protect();
   },
-  { afterSignInUrl: "/dashboard" }
+  { afterSignInUrl: "/dashboard/my-diary" }
 );
 
 export const config = {

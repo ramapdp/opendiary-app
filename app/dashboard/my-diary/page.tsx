@@ -3,6 +3,7 @@ import PostContent from "@/components/global/(diary)/PostContent";
 import { getUserData } from "@/utils/clerk";
 import { supabase } from "@/utils/supabase";
 import React from "react";
+import HeaderMyDiary from "@/components/global/(diary)/my-diary/HeaderMyDiary";
 
 const page = async (): Promise<React.ReactElement> => {
   const { email } = await getUserData();
@@ -18,12 +19,15 @@ const page = async (): Promise<React.ReactElement> => {
   }
 
   return (
-    <Wrapper title="My Diary">
-      <div className="grid md:grid-cols-3 gap-4">
-        {data?.map((diary) => (
-          <PostContent key={diary.id} diary_id={diary.id} {...diary} />
-        ))}
-      </div>
+    <Wrapper>
+      <>
+        <HeaderMyDiary />
+        <div className="grid md:grid-cols-3 gap-4">
+          {data?.map((diary) => (
+            <PostContent key={diary.id} diary_id={diary.id} {...diary} />
+          ))}
+        </div>
+      </>
     </Wrapper>
   );
 };

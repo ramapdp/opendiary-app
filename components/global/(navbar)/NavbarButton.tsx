@@ -16,9 +16,9 @@ const NavbarButton = (): React.ReactElement => {
   return isSignedIn ? (
     <div className="flex-none">
       <ul className="menu menu-horizontal px-1 items-center">
-        <li>
+        {/* <li>
           <Link href={"/dashboard"}>Dashboard</Link>
-        </li>
+        </li> */}
         {/* <li>
           <details>
             <summary>Manage Diary</summary>
